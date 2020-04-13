@@ -2,10 +2,10 @@ const { Router } = require('express')
 const router = Router()
 
 router.get('/users/signin', (req, res) => {
-    res.send('signin')
+    res.render('users/signin')
 })
 router.get('/users/signup', (req, res) => {
-    res.send('signup')
+    res.render('users/signup')
 })
 
 module.exports = router
