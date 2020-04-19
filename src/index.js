@@ -11,6 +11,7 @@ const app = express()
 require('./database')
 require('./config/passport')
 
+
 // settings
 app.set('port', process.env.PORT || 4000);
 app.set('views', path.join(__dirname, 'views'));
@@ -39,6 +40,7 @@ app.use((req, res, next) => {
     app.locals.success_msg = req.flash('success_msg')
     app.locals.error_msg = req.flash('error_msg')
     app.locals.error = req.flash('error')
+    app.locals.user = req.user || null
     next()
 })
 //routes
